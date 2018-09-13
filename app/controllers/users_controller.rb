@@ -57,14 +57,6 @@ class UsersController < ApplicationController
       end
     end
 
-        # Ensure correct user.
-        #def correct_user
-        #  unless current_user.id == params[:id]
-        #    flash[:danger] = "You can not edit an other users profile!"
-        #    redirect_to root_path
-        #  end
-        #  
-        #end
 
     # Confirms the correct user.
     def correct_user
