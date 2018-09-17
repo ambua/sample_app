@@ -5,7 +5,9 @@
       <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
-        <%= @user.email %>
+        <% if correct_user?(@user) %>
+          <%= @user.email %>
+        <% end %>
       </h1>
     </section>
   </aside>
