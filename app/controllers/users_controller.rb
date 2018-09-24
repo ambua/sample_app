@@ -12,6 +12,11 @@ class UsersController < ApplicationController
     @microposts = @user.microposts.paginate(page: params[:page])
   end
 
+    # Returns a user's status feed.
+    def feed
+      Micropost.where("user_id IN (?) OR user_id = ?", following_ids, id)
+    end
+
   def new
     @user = User.new
   end
